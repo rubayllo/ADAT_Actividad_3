@@ -39,7 +39,7 @@ public class CRUD {
             }
 
             for (Libro u : dataList) {
-                System.out.println("ID: " + u.getId() + ", Título: " + u.getTitulo());
+                System.out.println("ID: " + u.getId() + ", Título: " + u.getTitulo() + "   ***   Autor: " + u.getAutorByAutorId().getNombre());
             }
         }
     }

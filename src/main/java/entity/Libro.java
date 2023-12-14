@@ -16,9 +16,6 @@ public class Libro {
     @Basic
     @Column(name = "autor_id")
     private Integer autorId;
-    @ManyToOne
-    @JoinColumn(name = "autor_id", referencedColumnName = "id")
-    private Autor autorByAutorId;
 
     public int getId() {
         return id;
@@ -55,13 +52,5 @@ public class Libro {
     @Override
     public int hashCode() {
         return Objects.hash(id, titulo, autorId);
-    }
-
-    public Autor getAutorByAutorId() {
-        return autorByAutorId;
-    }
-
-    public void setAutorByAutorId(Autor autorByAutorId) {
-        this.autorByAutorId = autorByAutorId;
     }
 }

@@ -51,31 +51,36 @@ public class Menu {
         String eleccion = "";
 
         do {
+            System.out.print("\n\n---------- TABLA " + opcion.toUpperCase() + " ----------\n");
+            CRUD.mostrarRegistros(opcion);
+
             menuSecundario(opcion);
 
             eleccion = scanner.nextLine().toUpperCase();
 
-            System.out.println();
-
             switch(eleccion) {
 
                 case "A": // Crear
+                    System.out.print("\n\n---------- TABLA " + opcion.toUpperCase() + " ----------\n");
                     CRUD.mostrarRegistros(opcion);
 
                     if (opcion.matches("autor")){
-                        System.out.print("Nombre del autor: ");
+                        System.out.print("Inserta el nombre del autor: ");
                         String autor = scanner.nextLine().toUpperCase();
                         CRUD.crearRegistro(opcion, autor, "");
                     } else {
-                        System.out.print("Título del libro: ");
+                        System.out.print("Inserta el título del libro: ");
                         String titulo = scanner.nextLine().toUpperCase();
-                        System.out.print("Nombre del autor: ");
+                        System.out.print("\nAUTORES REGISTRADOS:\n");
+                        CRUD.mostrarRegistros("autor");
+                        System.out.print("Inserta el nombre del autor en caso de no existir se creará uno nuevo: ");
                         String autor = scanner.nextLine().toUpperCase();
                         CRUD.crearRegistro(opcion, autor, titulo);
                     }
 
                     break;
                 case "B": // Actualizar
+                    System.out.print("\n\n---------- TABLA " + opcion.toUpperCase() + " ----------\n");
                     CRUD.mostrarRegistros(opcion);
                     if (opcion.matches("autor")){
                         System.out.print("ID del AUTOR a modificar: ");
@@ -92,6 +97,7 @@ public class Menu {
                     }
                     break;
                 case "C": // Eliminar
+                    System.out.print("\n\n---------- TABLA " + opcion.toUpperCase() + " ----------\n");
                     CRUD.mostrarRegistros(opcion);
 
                     if (opcion.matches("autor")){
@@ -105,7 +111,9 @@ public class Menu {
                     }
                     break;
                 default:
+                    if (!eleccion.matches("X")){
                     System.out.println("Elije una opción válida");
+                    }
             }
         } while (!eleccion.equals("X"));
     }

@@ -1,13 +1,8 @@
 package Model;
 
-import entity.Autor;
-import entity.Libro;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 
 public class HibernateUtil {
