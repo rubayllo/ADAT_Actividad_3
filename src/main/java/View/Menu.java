@@ -13,7 +13,7 @@ public class Menu {
         String eleccion = "";
 
         do {
-            System.out.println("A. Autor");
+            System.out.println("\nA. Autor");
             System.out.println("B. Libro");
             System.out.println("X. Salir");
             System.out.print("Elige una opción: ");
